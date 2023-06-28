@@ -26,24 +26,24 @@ function newFilter(arr, cbk) {
   return resArray;
 }
 
-const fm1 = (el) => (el < 3 ? true : false);
+const fm3 = (el) => (el < 3 ? true : false);
 
 console.log(
-  "newFilter([1,2,3,4], fm1):",
-  newFilter([1, 2, 3, 4], fm1),
+  "newFilter([1,2,3,4], fm3):",
+  newFilter([1, 2, 3, 4], fm3),
   "should return [1,2]"
 );
 
 console.log(
-  "newFilter([3,4], fm1):",
-  newFilter([3, 4], fm1),
+  "newFilter([3,4], fm3):",
+  newFilter([3, 4], fm3),
   "should return []"
 );
 
-const fm2 = (el) => (el.length < 6 ? true : false);
+const fm4 = (el) => (el.length < 6 ? true : false);
 
 console.log(
-  "newFilter(['string','name'], fm1):",
-  newFilter(["string", "name"], fm2),
+  "newFilter(['string','name'], fm4):",
+  newFilter(["string", "name"], fm4),
   "should return ['name']"
 );
