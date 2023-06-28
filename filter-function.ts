@@ -16,8 +16,8 @@ PUSH element to result array
 
 */
 
-function newFilterTs(arr, cbk) {
-  let resArray = [];
+function newFilterTs<T>(arr: T[], cbk: (val: T) => boolean): T[] {
+  let resArray: T[] = [];
   for (let el of arr) {
     if (cbk(el) === true) {
       resArray.push(el);
@@ -27,6 +27,7 @@ function newFilterTs(arr, cbk) {
 }
 
 const fm1 = (el) => (el < 3 ? true : false);
+const fm2 = (el) => (el.length < 6 ? true : false);
 
 console.log(
   "newFilterTs([1,2,3,4], fm1):",
@@ -39,8 +40,6 @@ console.log(
   newFilterTs([3, 4], fm1),
   "should return []"
 );
-
-const fm2 = (el) => (el.length < 6 ? true : false);
 
 console.log(
   "newFilterTs(['string','name'], fm1):",
